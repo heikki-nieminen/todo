@@ -3,11 +3,9 @@ const dbConnectionString = process.env.DB_URL
 
 const query = (queryString, parameters, callback) => {
     const pool = new Pool({
-        connectionString: dbConnectionString,
-        ssl:              {
-            rejectUnauthorized: false
-        }
+        connectionString: dbConnectionString
     })
+
     return pool.query(queryString, parameters, callback)
 }
 
